@@ -61,16 +61,51 @@ function Main() {
     },
   ];
 
-  
+  function getGamesFromMonth(month) {
+    let gamesFromMonth = [];
+    info.forEach((element) => {
+      if (element.month == month) {
+        gamesFromMonth.push(element);
+      }
+    });
+    return gamesFromMonth;
+  }
+
+  function returnContainers() {
+    let containers = months;
+    let gamesFromMonth;
+    return containers.map((element, index) => {
+      return (
+        <Container
+          key={index + " " + element}
+          gameInfo={getGamesFromMonth(element)}
+          month={element}
+        />
+      );
+    });
+  }
+  const returnMonths = () => {
+    return months.map((value, index) => {
+      return <input key={index + " " + value} type="button" value={value} />;
+    });
+  };
+
+  useEffect(() => {
+    //console.table(getGamesFromMonth("May"));
+  });
 
   return (
     <>
-     
-      <div className="">
-        <Container month="May"/>
-        <Container month="June"/>
-        <Container month="July"/>
-      </div>
+      Years
+      <p>
+        <input type="radio" name="months-years" value="years" />
+      </p>
+      Months
+      <p>
+        <input type="radio" name="months-years" value="months" />
+      </p>
+      {returnMonths()}
+      <div className="">{returnContainers()}</div>
     </>
   );
 }

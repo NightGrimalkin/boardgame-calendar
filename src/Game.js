@@ -4,8 +4,8 @@ import "./game.css";
 function Game(props) {
   return (
     <div className="gameElem">
-        <h3>{props.name}</h3>
-        <h4>{props.premiere}</h4>
+      <h3>{props.name}</h3>
+      <h4>{props.premiere}</h4>
     </div>
   );
 }
