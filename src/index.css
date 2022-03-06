@@ -1,14 +1,7 @@
 html{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    background-color: #292929;
-}
-body{
     scroll-behavior: smooth;
     margin: 0px;
-    padding: 0px;
     border: 0px;
     color: #FFF;
-    background-color: #FFF;
+    background-color: #292929;
 }
